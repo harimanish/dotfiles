@@ -1,0 +1,20 @@
+# ~/.config/ghostty/config
+
+# Theme setup (Catppuccin with automatic light/dark if desired)
+theme = "dark:Catppuccin Mocha, light:Catppuccin Latte"
+
+# Shell integration – use fish
+shell-integration = fish
+
+# Appearance tweaks
+background-opacity = 0.95
+background-blur = 10
+
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+
+# Performance / behavior
+gtk-single-instance = desktop
+scrollback-limit = 10000000
+
