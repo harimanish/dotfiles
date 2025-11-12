@@ -1,20 +1,37 @@
-# ~/.config/ghostty/config
+# =========================
+#  Shaders 
+# =========================
+custom-shader = shaders/cursor_blaze.glsl
 
-# Theme setup (Catppuccin with automatic light/dark if desired)
+# =========================
+#  Theme Setup
+# =========================
 theme = "dark:Catppuccin Mocha, light:Catppuccin Latte"
 
-# Shell integration – use fish
+# =========================
+#  Shell Integration
+# =========================
 shell-integration = fish
 
-# Appearance tweaks
+# =========================
+#  Appearance Tweaks
+# =========================
 background-opacity = 0.95
 background-blur = 10
-
 window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
 
-# Performance / behavior
+# =========================
+#  Performance and Behavior
+# =========================
 gtk-single-instance = desktop
 scrollback-limit = 10000000
+# confirm-close-surface = false  # Disable confirmation when closing terminal surfaces
+
+# =========================
+#  Keybindings
+# =========================
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = performable:ctrl+v=paste_from_clipboard
 
