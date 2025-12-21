@@ -11,6 +11,7 @@ theme = "dark:Catppuccin Mocha, light:Catppuccin Latte"
 # =========================
 #  Shell Integration
 # =========================
+
 shell-integration = fish
 
 # =========================
