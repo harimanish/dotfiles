@@ -5,18 +5,20 @@ SCRIPT_NAME=$(basename "$0")
 BACKUP_DIR="${HOME}/gaming-backups"
 
 usage() {
-  echo "Usage: $SCRIPT_NAME [backup|restore] <path1> [path2] ..."
+  echo "Usage: $SCRIPT_NAME [backup|restore|gaming] <path1> [path2] ..."
   echo ""
   echo "Backup gaming data to zip files"
   echo ""
   echo "Commands:"
   echo "  backup   <paths>   Backup specified folders to zip"
   echo "  restore  <paths>   Restore folders from zip"
-  echo "  list                List available backups"
+  echo "  gaming             Backup common gaming folders (preset)"
+  echo "  list              List available backups"
   echo ""
   echo "Examples:"
   echo "  $SCRIPT_NAME backup ~/.config/unity3d ~/.local/share/UnrealEngine"
-  echo "  $SCRIPT_NAME restore unity3d unrealengine"
+  echo "  $SCRIPT_NAME gaming"
+  echo "  $SCRIPT_NAME restore unity3d unrealengine renpy"
   echo "  $SCRIPT_NAME list"
   echo ""
   echo "Default backup location: $BACKUP_DIR"
@@ -112,6 +114,29 @@ list_backups() {
   done
 }
 
+backup_gaming() {
+  echo "Backing up common gaming folders..."
+  local paths=(
+    "$HOME/.renpy"
+    "$HOME/.config/unity3d"
+    "$HOME/.local/share/UnrealEngine"
+    "$HOME/.config/EmuDeck"
+    "$HOME/.config/heroic"
+    "$HOME/.config/PCSX2"
+    "$HOME/.config/Ryujinx"
+    "$HOME/.config/Cemu"
+    "$HOME/.config/Vita3K"
+  )
+  
+  for path in "${paths[@]}"; do
+    if [ -d "$path" ]; then
+      backup_folder "$path"
+    else
+      echo "Skipping (not found): $path"
+    fi
+  done
+}
+
 # Main
 case "$1" in
   backup)
@@ -142,6 +167,11 @@ case "$1" in
     ;;
   list)
     list_backups
+    ;;
+  gaming)
+    backup_gaming
+    echo ""
+    echo "Gaming backup complete! Files saved to: $BACKUP_DIR"
     ;;
   -h|--help|help)
     usage
