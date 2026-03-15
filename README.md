@@ -55,7 +55,7 @@ Or manually:
 
 ```bash
 # CachyOS/Arch
-sudo pacman -S fish ghostty neovim starship btop bottom mpv bat yazili zed
+sudo pacman -S fish ghostty neovim starship btop bottom mpv bat yazi zed
 
 # Or with paru/yay
 paru -S fish ghostty neovim starship btop bottom mpv bat yazi zed
