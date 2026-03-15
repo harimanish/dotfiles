@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "format_on_save": "off",
+  "vim_mode": true,
   "icon_theme": "Catppuccin Mocha",
   "telemetry": {
     "diagnostics": false,
@@ -17,6 +24,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha (Blur) [Heavy]"
+    "dark": "Catppuccin Mocha"
   }
 }
